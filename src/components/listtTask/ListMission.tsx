@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Mission from '../../models/Missen'
+import ItemMission from './ItemMission'
 
-export default function ListMission() {
+interface Prop {
+    isChanged: boolean
+    setIsChanged: (isChanged:boolean) => void
+}
+
+export default function ListMission({isChanged, setIsChanged}:Prop) {
+
+    const [listMissions, setListMissions] = useState<Mission[]>([])
+
+    useEffect( ()=> {
+        (async () => {
+            const resolt:Response = await fetch("https://reactexambackend.onrender.com/missions/8623150")
+            const data:Mission[] = (await resolt.json() as Mission[])
+            setListMissions(data)
+        } )()
+    },[isChanged])
+
   return (
-    <div>ListMission</div>
+    <div>
+        {listMissions.map( missen => <ItemMission missen={missen} />)}
+    </div>
   )
 }

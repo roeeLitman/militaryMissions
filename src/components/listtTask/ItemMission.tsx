@@ -1,7 +1,12 @@
 import React from 'react'
+import Mission from '../../models/Missen'
 
-export default function ItemMission() {
+interface Prop {
+    missen:Mission
+}
+
+export default function ItemMission({missen}:Prop) {
   return (
-    <div>ItemMission</div>
+    <div>{missen}</div>
   )
 }

@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <AddingTask setIsChanged= {setIsChanged} />
-      <ListMission isChanged={isChanged} />
+      <ListMission isChanged={isChanged} setIsChanged={setIsChanged} />
     </>
   );
 }
