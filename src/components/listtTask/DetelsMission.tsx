@@ -1,7 +1,17 @@
 import React from 'react'
+import Missen from '../../models/Missen'
 
-export default function DetelsMission() {
+interface Prop {
+    missen:Missen
+}
+
+export default function DetelsMission({missen:{name, priority, status, description}}:Prop) {
   return (
-    <div>DetelsMission</div>
+    <div>
+        <p>Name:{name}</p>
+        <p>Priority:{priority}</p>
+        <p>Status{status}</p>
+        <p>Description:{description}</p>
+    </div>
   )
 }
