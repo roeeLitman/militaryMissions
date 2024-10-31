@@ -21,7 +21,7 @@ export default function ListMission({isChanged, setIsChanged}:Prop) {
 
   return (
     <div>
-        {listMissions.map( missen => <ItemMission missen={missen} />)}
+        {listMissions.map( missen => <ItemMission key={missen._id} missen={missen} setIsChanged={setIsChanged} />)}
     </div>
   )
 }
