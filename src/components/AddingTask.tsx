@@ -7,6 +7,9 @@ interface Prop {
 }
 
 export default function AddingTask({setIsChanged}:Prop) {
+    const addMissen = async ():Promise<void> => {
+        const resolt:Response = await fetch(`https://reactexambackend.onrender.com/missions/8623150/progress/${_id}`, { method: "Post" });
+    }
   return (
     <div className='addingTask'>
         <input type="text" placeholder='Edit' />

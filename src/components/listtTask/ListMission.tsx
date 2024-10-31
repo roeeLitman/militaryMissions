@@ -16,6 +16,7 @@ export default function ListMission({isChanged, setIsChanged}:Prop) {
             const resolt:Response = await fetch("https://reactexambackend.onrender.com/missions/8623150")
             const data:Mission[] = (await resolt.json() as Mission[])
             setListMissions(data)
+            setIsChanged(false)
         } )()
     },[isChanged])
 
