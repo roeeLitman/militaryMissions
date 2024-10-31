@@ -1,7 +1,24 @@
 import React from 'react'
 
-export default function AddingTask() {
+interface Prop {
+    setIsChanged: (isChanged:boolean) => void
+}
+
+export default function AddingTask({setIsChanged}:Prop) {
   return (
-    <div>AddingTask</div>
+    <div className='addingTask'>
+        <input type="text" placeholder='Edit' />
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <input type="text" placeholder='descripition' />
+    </div>
   )
 }
