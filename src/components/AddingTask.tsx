@@ -8,26 +8,27 @@ interface Prop {
 }
 
 export default function AddingTask({ setIsChanged }: Prop) {
-
   const [Missen, setMissen] = useState<Mission>({
     name: "",
     description: "",
-    priority: "",
-    status: "",
+    priority: `${Priority.Low}`,
+    status: `${Status.Pending}`,
   });
 
   const addMissen = async (): Promise<void> => {
     const res = await fetch(
       `https://reactexambackend.onrender.com/missions/8623150`,
-      { method: "POST", 
-        headers:{ 
-        'Content-Type': 'application/json'
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Missen),
       }
-     ,body: JSON.stringify(Missen)  }
     );
-    const data = await res.json()
-    console.log(data)
-    setIsChanged(true)
+    const data = await res.json();
+    console.log(data);
+    setIsChanged(true);
   };
 
   return (
