@@ -1,4 +1,3 @@
-import React from 'react'
 import Missen from '../../models/Missen'
 
 interface Prop {

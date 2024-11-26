@@ -1,4 +1,3 @@
-import React from "react";
 import { Status } from "../../models/Enums/Status";
 
 interface Prop {
